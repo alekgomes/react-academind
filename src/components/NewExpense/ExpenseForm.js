@@ -20,7 +20,8 @@ const ExpenseForm = () => {
     setUserInput({ ...userInput, enteredAmount: e.target.value })
 
   const dateChangeHandler = (e) =>
-    setUserInput({ ...userInput, enteredDate: e.target.value })
+    // setUserInput({ ...userInput, enteredDate: e.target.value })
+    setUserInput((prevState) => ({ ...prevState, enteredDate: e.target.value })) // usando função, temos acesso ao PREVIOUS STATE
 
   return (
     <form action="">
