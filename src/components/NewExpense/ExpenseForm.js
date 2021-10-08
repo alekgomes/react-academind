@@ -32,9 +32,8 @@ const ExpenseForm = (props) => {
       date: new Date(enteredDate),
     }
 
+    console.log("expenseData: ", expenseData)
     props.onSaveExpenseData(expenseData)
-
-    console.log(expenseData)
   }
 
   return (
