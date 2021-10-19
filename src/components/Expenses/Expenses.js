@@ -1,6 +1,8 @@
 import "./Expenses.css"
 import ExpenseItem from "./ExpenseItem"
 import ExpensesFilter from "./ExpensesFilter"
+import ExpensesList from "./ExpensesList"
+import ExpensesChart from "./ExpensesChart"
 import { useState } from "react"
 
 function Expenses(props) {
@@ -17,9 +19,8 @@ function Expenses(props) {
   return (
     <div className="expenses">
       <ExpensesFilter onDateChange={dateChangeHandler} />
-      {filteredExpenses.map((e) => (
-        <ExpenseItem title={e.title} date={e.date} amount={e.amount} />
-      ))}
+      <ExpensesChart expenses={filteredExpenses} />
+      <ExpensesList items={filteredExpenses} />
     </div>
   )
 }
